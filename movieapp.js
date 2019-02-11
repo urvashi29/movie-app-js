@@ -77,11 +77,12 @@ hideform.addEventListener('click', function (e) {
 /*
 //Search an item
 var searchForm=document.forms['search-movies'];
-    var value=searchForm.querySelector('input[type="text"]').value;
-    var searchItem=document.querySelector('#movie-list .name');
-    searchItem.forEach(function (text) {
-        text.addEventListener('search',function(e) {
-    if(e.target.text==value)
+   var val=searchForm.querySelector('input[type="text"]').value;
+   // var searchItem=document.querySelector('#movie-list .name');
+    filter=val.value.toUpperCase();
+    searchForm.forEach(function (text) {
+        text.addEventListener('onsearch',function(e) {
+    if((text.toUpperCase().indexOf(filter) > -1)
         {
             list.style.display='block';
         }
