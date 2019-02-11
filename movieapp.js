@@ -76,13 +76,14 @@ hideform.addEventListener('click', function (e) {
 
 /*
 //Search an item
-var searchForm=document.forms['search-movies'];
-   var val=searchForm.querySelector('input[type="text"]').value;
-   // var searchItem=document.querySelector('#movie-list .name');
-    filter=val.value.toUpperCase();
-    searchForm.forEach(function (text) {
-        text.addEventListener('onsearch',function(e) {
-    if((text.toUpperCase().indexOf(filter) > -1)
+//Search an item
+var searchForm=document.forms['search-movies'][0];
+  // var val=searchForm.querySelector('input[type="text"]').value;
+    var searchItem=document.querySelectorAll('#movie-list .name');
+    filter=searchForm.value.toLowerCase();
+    searchItem.forEach(function (text) {
+        text.addEventListener('onkeyup',function(e) {
+    if(text.toUpperCase().indexOf(filter) > -1)
         {
             list.style.display='block';
         }
@@ -91,5 +92,6 @@ var searchForm=document.forms['search-movies'];
         }
         
     })
+        
 })
 */
