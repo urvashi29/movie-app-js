@@ -83,7 +83,7 @@ var searchForm=document.forms['search-movies'];
         text.addEventListener('search',function(e) {
     if(e.target.text==value)
         {
-            list.style.display='';
+            list.style.display='block';
         }
         else {
             list.style.display="none";
