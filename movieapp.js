@@ -74,24 +74,22 @@ hideform.addEventListener('click', function (e) {
 
 
 
-/*
+
 //Search an item
-//Search an item
-var searchForm=document.forms['search-movies'][0];
-  // var val=searchForm.querySelector('input[type="text"]').value;
-    var searchItem=document.querySelectorAll('#movie-list .name');
-    filter=searchForm.value.toLowerCase();
-    searchItem.forEach(function (text) {
-        text.addEventListener('onkeyup',function(e) {
-    if(text.toUpperCase().indexOf(filter) > -1)
-        {
-            list.style.display='block';
-        }
-        else {
-            list.style.display="none";
-        }
-        
-    })
-        
+var searchForm = document.forms['search-movies'][0];
+searchForm.addEventListener('keyup', function (e) {
+	var searchItem = list.querySelectorAll('li');
+	var filter = e.target.value.toUpperCase();
+	//Array.from(searchItem).forEach(function (text) {
+	//  var textVal=text.firstElementChild.textContent;//in this we are putting 
+	Array.from(searchItem).forEach(function (text) {
+		var textVal = text.firstElementChild.textContent;
+		if (textVal.toUpperCase().indexOf(filter) > -1) {
+			text.style.display = 'block';
+		} else {
+			text.style.display = "none";
+		}
+
+	})
+
 })
-*/
