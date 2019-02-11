@@ -80,8 +80,6 @@ var searchForm = document.forms['search-movies'][0];
 searchForm.addEventListener('keyup', function (e) {
 	var searchItem = list.querySelectorAll('li');
 	var filter = e.target.value.toUpperCase();
-	//Array.from(searchItem).forEach(function (text) {
-	//  var textVal=text.firstElementChild.textContent;//in this we are putting 
 	Array.from(searchItem).forEach(function (text) {
 		var textVal = text.firstElementChild.textContent;
 		if (textVal.toUpperCase().indexOf(filter) > -1) {
