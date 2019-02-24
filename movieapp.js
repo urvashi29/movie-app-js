@@ -52,7 +52,6 @@ addForm.addEventListener('submit', function (e) {
 })
 
 
-
 //hide the list
 var hideform = document.querySelector('#add-movie #hide');
 hideform.addEventListener('click', function (e) {
