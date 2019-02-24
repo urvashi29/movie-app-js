@@ -3,7 +3,6 @@ var btns = document.querySelectorAll('#movie-list .delete');
 btns.forEach(function (btn) {
 	btn.addEventListener('click', function (e) {
 		var li = e.target.parentElement;
-
 		li.parentNode.removeChild(li)
 	});
 });
@@ -22,6 +21,7 @@ btns.forEach(function (btn) {
 var list = document.querySelector('#movie-list ul');
 
 list.addEventListener('click', function (e) {
+	//functionality to be performed when it is clicked
 	if (e.target.className === 'delete') { // We want to get where did the click happened, so className
 		// console.log(e.target);
 		var li = e.target.parentElement; // this is the li which is the parent to the delete and we want to delete it.
@@ -74,21 +74,20 @@ hideform.addEventListener('click', function (e) {
 
 
 
-/*
+
 //Search an item
-var searchForm=document.forms['search-movies'];
-    var value=searchForm.querySelector('input[type="text"]').value;
-    var searchItem=document.querySelector('#movie-list .name');
-    searchItem.forEach(function (text) {
-        text.addEventListener('search',function(e) {
-    if(e.target.text==value)
-        {
-            
-        }
-        else {
-            list.style.display="none";
-        }
-        
-    })
+var searchForm = document.forms['search-movies'][0];
+searchForm.addEventListener('keyup', function (e) {
+	var searchItem = list.querySelectorAll('li');
+	var filter = e.target.value.toUpperCase();
+	Array.from(searchItem).forEach(function (text) {
+		var textVal = text.firstElementChild.textContent;
+		if (textVal.toUpperCase().indexOf(filter) > -1) {
+			text.style.display = 'block';
+		} else {
+			text.style.display = "none";
+		}
+
+	})
+
 })
-*/
